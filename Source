@@ -3,8 +3,11 @@ local TextButton = Instance.new("TextButton")
 local redTextButton = Instance.new("TextButton")
 local hoptextbutton = Instance.new("TextButton")
 local breakTextButton = Instance.new("TextButton")
+local RunTextButton = Instance.new("TextButton")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
+
+
  
 tpsbringer.Name = "tpsbringer"
 tpsbringer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -28,6 +31,17 @@ breakTextButton.Text = "Break game L (need to have ball)"
 breakTextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 breakTextButton.TextSize = 18.000
 breakTextButton.TextScaled = true
+
+
+RunTextButton.Parent = tpsbringer
+RunTextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+RunTextButton.Position = UDim2.new(0.0952399746, 0, 0.717021656, 0)
+RunTextButton.Size = UDim2.new(0, 111, 0, 29)
+RunTextButton.Font = Enum.Font.SourceSans
+RunTextButton.Text = "E to run"
+RunTextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+RunTextButton.TextSize = 18.000
+RunTextButton.TextScaled = true
 
 
 hoptextbutton.Parent = tpsbringer
@@ -87,4 +101,15 @@ hoptextbutton.MouseButton1Click:Connect(function()
         game:GetService("TeleportService"):Teleport(10954392702, game.Players.LocalPlayer)
   game.ReplicatedStorage.KickedBall:FireServer(55, Vector3.new(123, 5555555555555555555555555555555555555555, -243.82211303710938),game.Workspace.Game.SoccerBalls.SoccerBall)
 
+end)
+
+
+
+
+RunTextButton.MouseButton1Click:Connect(function()
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+        if key.KeyCode == Enum.KeyCode.E then 
+    game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = 75
+    end
+    end)
 end)
