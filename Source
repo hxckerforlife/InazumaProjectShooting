@@ -112,4 +112,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(key)
     game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = 75
     end
     end)
+    
+    wait(0.5)
+    RunTextButton:Destroy()
+    
 end)
