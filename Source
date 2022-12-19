@@ -4,6 +4,7 @@ local redTextButton = Instance.new("TextButton")
 local hoptextbutton = Instance.new("TextButton")
 local breakTextButton = Instance.new("TextButton")
 local RunTextButton = Instance.new("TextButton")
+local MaxTextButton = Instance.new("TextButton")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
 
@@ -42,6 +43,17 @@ RunTextButton.Text = "E to run"
 RunTextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 RunTextButton.TextSize = 18.000
 RunTextButton.TextScaled = true
+
+
+MaxTextButton.Parent = tpsbringer
+MaxTextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+MaxTextButton.Position = UDim2.new(0.18, 0, 0.717021656, 0)
+MaxTextButton.Size = UDim2.new(0, 111, 0, 29)
+MaxTextButton.Font = Enum.Font.SourceSans
+MaxTextButton.Text = "Max stats"
+MaxTextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+MaxTextButton.TextSize = 18.000
+MaxTextButton.TextScaled = true
 
 
 hoptextbutton.Parent = tpsbringer
@@ -113,7 +125,24 @@ game:GetService("UserInputService").InputBegan:Connect(function(key)
     end
     end)
     
-    wait(0.5)
+    wait()
     RunTextButton:Destroy()
-    
+    MaxTextButton:Destroy()
 end)
+
+
+MaxTextButton.MouseButton1Click:Connect(function()
+game.Players.LocalPlayer.Stamina.Value = 100
+game.Players.LocalPlayer.Power.Value = 100
+game.Players.LocalPlayer.Defense.Value = 100
+game.Players.LocalPlayer.Speed.Value = 100
+game.Players.LocalPlayer.Dribble.Value = 100
+game.Players.LocalPlayer.Intellect.Value = 100
+game.Players.LocalPlayer.Level.Value = 100
+    
+    wait()
+    RunTextButton:Destroy()
+    MaxTextButton:Destroy()
+end)
+
+
